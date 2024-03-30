@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option go_package = "panqueques.distribuidos.sensorpb";
+
+package panqueques.distribuidos;
+
+message SensorData {
+    float value = 1;
+}
+
+message SensorResponse {
+    string message = 1;
+    string data_sent_to_proxy = 2;
+}
+
+service SensorService {
+    rpc SendData (SensorData) returns (SensorResponse) {}
+}
