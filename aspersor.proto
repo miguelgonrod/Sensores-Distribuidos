@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package myservice;
+
+service AspersorService {
+  rpc EncenderAspersor(ActivarSolicitud) returns (ActivarRespuesta) {}
+  rpc ApagarAspersor(DesactivarSolicitud) returns (DesactivarRespuesta){}
+}
+
+message ActivarSolicitud {
+    string message = 1;
+}
+
+message ActivarRespuesta {
+    string message = 2;
+}
+
+message DesactivarSolicitud {
+    string message = 3;
+}
+
+message DesactivarRespuesta {
+    string message = 4;
+}
